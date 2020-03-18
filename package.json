@@ -1,0 +1,19 @@
+{
+  "name": "tw-cov-sent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pouchdb": "^7.2.1",
+    "sentiment": "^5.0.2",
+    "twitter": "^1.7.1",
+    "uuid": "^7.0.2"
+  }
+}
