@@ -4,7 +4,7 @@ Sentiment analysis applied to the hashtag #covid19 from Twitter.
 
 ## Configuration
 
-Edit the `.env.example` file with your Twitter API credentials and the location of your CouchDB instance.
+Copy the `.env.example` to `.env` and add your Twitter API credentials and the URL of your CouchDB instance.
 
 ## Run
 
