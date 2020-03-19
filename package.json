@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "pouchdb": "^7.2.1",
     "sentiment": "^5.0.2",
     "twitter": "^1.7.1",

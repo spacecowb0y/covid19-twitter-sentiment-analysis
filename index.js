@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const Twitter = require("twitter");
 const Sentiment = require("sentiment");
 const PouchDB = require("pouchdb");
@@ -27,24 +29,29 @@ stream.on("data", async tweet => {
     text,
     retweet_count,
     favorite_count,
-    user: { location }
+    user: { screen_name, location, profile_image_url_https }
   } = tweet;
 
-  if (lang === "en") {
-    let { score, comparative, words, positive, negative } = sentiment.analyze(text);
+  if (lang === "en" && !text.includes("RT @")) {
+    let { score, comparative, calculation, words, positive, negative } = sentiment.analyze(text);
     db.put({
       _id: uuidv4(),
       tweet: {
         id: id,
         text: text,
-        location: location,
         retweet_count: retweet_count,
         favorite_count: favorite_count,
+        user: {
+          screen_name: screen_name,
+          location: location,
+          profile_image_url_https: profile_image_url_https
+        },
         created_at: created_at
       },
       sentiment: {
         score: score,
         comparative: comparative,
+        calculation: calculation,
         words: words,
         positive: positive,
         negative: negative
